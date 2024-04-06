@@ -1,0 +1,118 @@
+:root {
+  --font-dark: rgb(37, 37, 37);
+  --font-light: white;
+  --light-hover: rgba(255, 255, 255, 0.25);
+  --side-menu-width: min(100%, 768px);
+  --side-menu-position: min(-100%, -768px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--font-dark);
+}
+
+/* div container */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: min(100%, 768px);
+  margin: auto;
+  padding: 2rem 3rem;
+}
+
+/* paragraphs */
+p {
+  margin: 1rem 0px;
+}
+
+/* all lists */
+ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* all list items */
+li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* all list items hover */
+li:hover {
+  background-color: var(--light-hover);
+}
+
+/* nav bar */
+nav {
+  background-color: var(--font-dark);
+  color: var(--font-light);
+  position: sticky;
+  top: 0;
+  right: 0;
+  height: 8vh;
+}
+
+/* navbar list */
+nav ul {
+  justify-content: flex-start;
+}
+
+/* navbar list item */
+nav ul li {
+  padding: 1rem;
+}
+
+/* navbar list sidemenu item */
+nav ul li.sidemenu {
+  margin-left: auto;
+}
+
+/* side menu */
+aside {
+  background-color: var(--font-dark);
+  color: white;
+  display: flex;
+  position: fixed;
+  width: var(--side-menu-width);
+  height: 100%;
+  transition: all ease 0.5s;
+  box-shadow: -2px 2px 20px 10px rgba(0, 0, 0, 0.5);
+  top: 0;
+}
+
+aside.hidden {
+  visibility: hidden;
+  right: var(--side-menu-position);
+}
+
+aside.visible {
+  visibility: visible;
+  right: 0;
+}
+
+/* side menu list */
+aside ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* side menu list items */
+aside ul li {
+  width: 100%;
+}
